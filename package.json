@@ -1,0 +1,76 @@
+{
+  "name": "simas-vscode-extension",
+  "displayName": "SIMAS Language Support",
+  "description": "Provides syntax highlighting, snippets, and basic support for the SIMAS programming language.",
+  "version": "0.1.1",
+  "publisher": "turrnut",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "simas",
+        "aliases": ["SIMAS", "simas"],
+        "extensions": [".simas"],
+        "configuration": "./language-configuration.json",
+        "icon" : {
+          "light":"./assets/simas.png",
+          "dark": "./assets/simas.png"
+        }
+      }, 
+      {
+        
+          "id": "csa",
+          "aliases": ["CSA", "csa", "Compiled Simple Assembly"],
+          "extensions": [".csa"],
+          "configuration": "./language-configuration.json",
+          "icon" : {
+            "light":"./assets/csa.png",
+            "dark": "./assets/csa.png"
+          
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "simas",
+        "scopeName": "source.simas",
+        "path": "./syntaxes/tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "simas",
+        "path": "./snippets/simas.json"
+      }
+    ]
+  },
+"scripts": {
+  "vscode:prepublish": "npm run build",
+  "build": "echo 'No build step defined'"
+}
+,
+  "devDependencies": {
+    "@vscode/test-electron": "^2.0.0"
+  },
+  "keywords": [
+    "SIMAS",
+    "programming-language",
+    "syntax-highlighting",
+    "vscode-extension"
+  ],
+  "author": "Turrnut",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-repository/simas-vscode-extension.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-repository/simas-vscode-extension/issues"
+  },
+  "homepage": "https://github.com/your-repository/simas-vscode-extension#readme"
+}

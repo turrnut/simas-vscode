@@ -1,0 +1,68 @@
+{
+  "scopeName": "source.simas",
+  "patterns": [
+    { "include": "#keywords" },
+    { "include": "#datatypes" },
+    { "include": "#comments" },
+    { "include": "#constants" },
+    { "include": "#labels" }
+  ],
+  "repository": {
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.simas",
+          "match": "\\b(?i:SET|ADD|SUB|MUL|DIV|LABEL|JUMP|JUMPV|CALL|FUN|END|RET|EQC|EQV|NEQC|NEQV|STE|ST|GTE|GT|COPY|PRINT|PRINTC|PRINTLN|PRINTS|QUIT|CONV)\\b"
+        }
+      ]
+    },
+    "datatypes": {
+      "patterns": [
+        {
+          "name": "storage.type.simas",
+          "match": "\\b(?i:bool|num|str|in)\\b"
+        }
+      ]
+    },
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.simas",
+          "match": "@.*?;"
+        }
+      ]
+    },
+    "constants": {
+      "patterns": [
+        {
+          "name": "constant.numeric.simas",
+          "match": "\\b\\d+(\\.\\d+)?\\b" 
+        },
+        {
+          "name": "constant.boolean.simas",
+          "match": "\\b(?i:true|false)\\b"
+        },
+        {
+          "name": "string.quoted.double.simas",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.simas",
+              "match": "\\\\."
+            }
+          ]
+        }
+      ]
+    },
+    "labels": {
+      "patterns": [
+        {
+          "name": "entity.name.label.simas",
+          "match": "\\bLABEL\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\b"
+        }
+      ]
+    }
+  },
+  "fileTypes": ["simas"]
+}

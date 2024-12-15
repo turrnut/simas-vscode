@@ -1,0 +1,39 @@
+{
+    "Function": {
+      "prefix": "fun",
+      "body": [
+        "@ A function;",
+        "FUN ${1:functionName} ${2:0};",
+        "    ${3:PRINTC function called!};",
+        "    RET;",
+        "END FUN;"
+      ],
+      "description": "Define a SIMAS function"
+    },
+    "Loop": {
+      "prefix": "loop",
+      "body": [
+        "@ A loop;",
+        "LABEL ${1:loopLabel};",
+        "${2:body}",
+        "SET BOOL condition true;",
+        "JUMPV ${1:loopLabel} ${3:condition};"
+      ],
+      "description": "Create a loop with a label"
+    },
+    "if": {
+      "prefix": "if",
+      "body": [
+        "@ An if statement;",
+        "SET BOOL condition true;",
+        "JUMPV ${1:ifTrue} ${2:condition};",
+        "@ If false;",
+        "JUMP ${3:ending};",
+        "LABEL ${1:ifTrueLabel};",
+        "@ If true;",
+        "LABEL ${3:ending};"
+      ],
+      "description": "Create a simple if statement"
+    }
+  }
+  
